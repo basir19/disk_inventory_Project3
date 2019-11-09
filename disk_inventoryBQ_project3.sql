@@ -186,7 +186,7 @@ GO
 INSERT INTO [dbo].[Artist]
 			([ArtistFirstName],[ArtistLastName],[ArtistTypeID])
 VALUES		
-			('Dave','Brubeck', 1),
+			('Ralphy','Melia', 1),
 			('Miles','Davis', 1),
 			('Duke', 'Ellington', 1),
 			('Thelonious', 'Mon', 1),
@@ -201,13 +201,13 @@ VALUES
 			('Herbie', 'Hancock', 2),
 			('Chet', 'Baker', 1),
 			('Dave','Brubeck', 1),
-			('Dave','Brubeck', 1),
-			('Dave','Brubeck', 1),
-			('Dave','Brubeck', 1),
-			('Dave','Brubeck', 1),
-			('Dave','Brubeck', 1),
-			('Dave','Brubeck', 1),
-			('Dave','Brubeck', 1)
+			('Zayn', 'Humphreys', 1),
+			('Antoni', 'Merrill', 1),
+			('Quinn', 'Bloom', 1),
+			('Honey', 'Stubbs', 1),
+			('Dave Brubeck Leal', null, 1),
+			('Lachlan', 'Velazquez', 1),
+			('Ayda Enriquez Mikhail Swift', null, 1)
 GO
 SELECT * FROM [dbo].[Artist];
 
