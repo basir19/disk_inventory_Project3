@@ -25,12 +25,16 @@
     <asp:SqlDataSource ID="ddlDiskStatus" runat="server" ConnectionString="<%$ ConnectionStrings:disk_inventoryBQConnectionString %>" SelectCommand="SELECT [StatusID], [StatusDescription] FROM [DiskStatus]"></asp:SqlDataSource>
    </div>
         <%-- List of Disk sorted by disk name --%>
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server"  HeaderText="* means that the field is required" CssClass="text-danger" />
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="DiskID" DataSourceID="lvDisk" InsertItemPosition="LastItem">
+        <%-- Alternating Item Template --%>
         <AlternatingItemTemplate>
             <tr style="background-color: #FAFAD2;color: #284775;">
                 <td>
-                    <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
-                    <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                    <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />                    
+                </td>
+                <td>                   
+                    <asp:Button ID="Button6" runat="server" CommandName="Edit" Text="Edit" />
                 </td>
                 <td>
                     <asp:Label ID="DiskIDLabel" runat="server" Text='<%# Eval("DiskID") %>' />
@@ -52,32 +56,48 @@
                 </td>
             </tr>
         </AlternatingItemTemplate>
+        <%-- Edit Item Template --%>
         <EditItemTemplate>
             <tr style="background-color: #FFCC66;color: #000080;">
                 <td>
-                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />                   
+                </td>
+                <td>                    
+                    <asp:Button ID="Button5" runat="server" CommandName="Cancel" Text="Cancel" CausesValidation="false" />
                 </td>
                 <td>
                     <asp:Label ID="DiskIDLabel1" runat="server" Text='<%# Eval("DiskID") %>' />
                 </td>
                 <td>
                     <asp:TextBox ID="DiskNameTextBox" runat="server" Text='<%# Bind("DiskName") %>' />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="DiskNameTextBox" Text="*" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                 </td>
                 <td>
                     <asp:TextBox ID="DiskReleaseDateTextBox" runat="server" Text='<%# Bind("DiskReleaseDate") %>' />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Text="*" CssClass="text-danger" Display="Dynamic" 
+                        ControlToValidate="DiskReleaseDateTextBox" ></asp:RequiredFieldValidator>
+                    <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Date you entered is not Valid" CssClass="text-danger" Display="Dynamic"
+                        type="Date" MaximumValue="12/31/9999" MinimumValue="01/01/0001" ControlToValidate="DiskReleaseDateTextBox" ></asp:RangeValidator>
                 </td>
                 <td>
                     <asp:TextBox ID="TypeIDTextBox" runat="server" Text='<%# Bind("TypeID") %>' />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Text="*" CssClass="text-danger" Display="Dynamic" 
+                        ControlToValidate="TypeIDTextBox" ></asp:RequiredFieldValidator>
                 </td>
                 <td>
                     <asp:TextBox ID="StatusIDTextBox" runat="server" Text='<%# Bind("StatusID") %>' />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Text="*" CssClass="text-danger" Display="Dynamic" 
+                        ControlToValidate="StatusIDTextBox" ></asp:RequiredFieldValidator>
                 </td>
                 <td>
                     <asp:TextBox ID="GenreIDTextBox" runat="server" Text='<%# Bind("GenreID") %>' />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Text="*" CssClass="text-danger" Display="Dynamic"  
+                        ControlToValidate="GenreIDTextBox" ></asp:RequiredFieldValidator>
                 </td>
             </tr>
         </EditItemTemplate>
+        <%-- Empty Data Template --%>
         <EmptyDataTemplate>
             <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                 <tr>
@@ -205,10 +225,10 @@
     </asp:ListView>
     <asp:SqlDataSource ID="lvDisk" runat="server" 
         ConnectionString="<%$ ConnectionStrings:disk_inventoryBQConnectionString %>" 
-        DeleteCommand="sp_delDisk @DiskID" 
-        InsertCommand="sp_InsDisk @DiskName, @DiskReleaseDate, @TypeID, @StatusID, @GenreID)" 
+        DeleteCommand="execute sp_delDisk @DiskID" 
+        InsertCommand="execute sp_InsDisk @DiskName, @DiskReleaseDate, @TypeID, @StatusID, @GenreID" 
         SelectCommand="SELECT [DiskID], [DiskName], [DiskReleaseDate], [TypeID], [StatusID], [GenreID] FROM [CD_DVD] WHERE (([TypeID] = @TypeID) AND ([GenreID] = @GenreID) AND ([StatusID] = @StatusID)) ORDER BY [DiskName]" 
-        UpdateCommand="sp_updDisk @DiskID, @DiskName, [@DiskReleaseDate, @TypeID, @StatusID, @GenreID">
+        UpdateCommand="execute sp_updDisk @DiskID, @DiskName, @DiskReleaseDate, @TypeID, @StatusID, @GenreID">
         <DeleteParameters>
             <asp:Parameter Name="DiskID" Type="Int32" />
         </DeleteParameters>
