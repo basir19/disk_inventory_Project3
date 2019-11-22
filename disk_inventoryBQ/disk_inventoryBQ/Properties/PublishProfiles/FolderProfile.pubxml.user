@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>http://localhost/swdv235_project2_bq</_PublishTargetUrl>
+    <_PublishTargetUrl>http://localhost/swdv235_project4_bq</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Account/AddPhoneNumber.aspx">
@@ -73,10 +73,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2018 09:42:28</publishTime>
     </File>
     <File Include="bin/disk_inventoryBQ.dll">
-      <publishTime>11/16/2019 00:33:20</publishTime>
+      <publishTime>11/22/2019 11:54:42</publishTime>
     </File>
     <File Include="bin/disk_inventoryBQ.pdb">
-      <publishTime>11/16/2019 00:33:20</publishTime>
+      <publishTime>11/22/2019 11:54:42</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
@@ -351,6 +351,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Global.asax">
       <publishTime>11/07/2019 10:37:01</publishTime>
     </File>
+    <File Include="Maintenance/Artist.aspx">
+      <publishTime>11/22/2019 11:35:38</publishTime>
+    </File>
+    <File Include="Maintenance/Borrower.aspx">
+      <publishTime>11/22/2019 11:29:17</publishTime>
+    </File>
+    <File Include="Maintenance/Disk.aspx">
+      <publishTime>11/22/2019 11:22:31</publishTime>
+    </File>
+    <File Include="Maintenance/Web.config">
+      <publishTime>11/22/2019 10:20:56</publishTime>
+    </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>11/07/2019 10:37:07</publishTime>
     </File>
@@ -442,7 +454,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/07/2019 10:37:08</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>11/08/2019 00:59:46</publishTime>
+      <publishTime>11/22/2019 10:19:56</publishTime>
     </File>
     <File Include="Site.Mobile.Master">
       <publishTime>11/07/2019 10:37:09</publishTime>
@@ -454,7 +466,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/07/2019 10:37:09</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/16/2019 00:00:58</publishTime>
+      <publishTime>11/22/2019 11:54:42</publishTime>
     </File>
   </ItemGroup>
 </Project>
