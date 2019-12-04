@@ -14,9 +14,9 @@
         <h1>Welcom to my Disk Inventory Management System</h1>
     </div>
     <%-- Dropdwon list for artis type --%>
-    <div class="form-group">
-        <label class="col-sm-3 control-label">Select the Artist Type</label>
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="ddlArtist" DataTextField="ArtistDesciption" DataValueField="ArtistTypeID"></asp:DropDownList>
+    <div class="container">
+        <label class="col">Select the Artist Type</label>
+        <asp:DropDownList class="col" ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="ddlArtist" DataTextField="ArtistDesciption" DataValueField="ArtistTypeID"></asp:DropDownList>
         <asp:SqlDataSource ID="ddlArtist" runat="server" ConnectionString="<%$ ConnectionStrings:disk_inventoryBQConnectionString %>" SelectCommand="SELECT [ArtistTypeID], [ArtistDesciption] FROM [ArtistType]"></asp:SqlDataSource>
     </div>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="* Means that the field is required, Please check the field and try again" CssClass="text-danger" />
@@ -26,10 +26,10 @@
         <AlternatingItemTemplate>
             <tr style="background-color: #FAFAD2; color: #284775;">
                 <td>
-                    <asp:Button ID="Button5" runat="server" CommandName="Delete" Text="Delete" />
+                    <asp:Button class="btn btn-danger" ID="Button5" runat="server" CommandName="Delete" Text="Delete" />
                 </td>
                 <td>
-                    <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                    <asp:Button class="btn btn-secondary" ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                 </td>
                 <td>
                     <asp:Label ID="ArtistIDLabel" runat="server" Text='<%# Eval("ArtistID") %>' />
@@ -49,10 +49,10 @@
         <EditItemTemplate>
             <tr style="background-color: #FFCC66; color: #000080;">
                 <td>
-                    <asp:Button ID="Button4" runat="server" CommandName="Update" Text="Update" ValidationGroup="edit" />
+                    <asp:Button class="btn btn-danger" ID="Button4" runat="server" CommandName="Update" Text="Update" ValidationGroup="edit" />
                 </td>
                 <td>
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" CausesValidation="false" />
+                    <asp:Button class="btn btn-secondary" ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" CausesValidation="false" />
                 </td>
                 <td>
                     <asp:Label ID="ArtistIDLabel1" runat="server" Text='<%# Eval("ArtistID") %>' />
@@ -84,10 +84,10 @@
         <InsertItemTemplate>
             <tr style="">
                 <td>
-                    <asp:Button ID="Button3" runat="server" CommandName="Insert" Text="Insert" ValidationGroup="insert"/>
+                    <asp:Button class="btn btn-danger" ID="Button3" runat="server" CommandName="Insert" Text="Insert" ValidationGroup="insert"/>
                 </td>
                 <td>
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                    <asp:Button class="btn btn-secondary" ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                 </td>
                 <td>&nbsp;</td>
                 <td>
@@ -109,10 +109,10 @@
         <ItemTemplate>
             <tr style="background-color: #FFFBD6; color: #333333;">
                 <td>
-                    <asp:Button ID="Button2" runat="server" CommandName="Delete" Text="Delete" />
+                    <asp:Button class="btn btn-danger" ID="Button2" runat="server" CommandName="Delete" Text="Delete" />
                 </td>
                 <td>
-                    <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                    <asp:Button class="btn btn-secondary" ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                 </td>
                 <td>
                     <asp:Label ID="ArtistIDLabel" runat="server" Text='<%# Eval("ArtistID") %>' />
@@ -130,11 +130,11 @@
         </ItemTemplate>
         <%-- Layout Template --%>
         <LayoutTemplate>
-            <table runat="server">
+            <table runat="server" class="container">
                 <tr runat="server">
                     <td runat="server">
-                        <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px; font-family: Verdana, Arial, Helvetica, sans-serif;">
-                            <tr runat="server" style="background-color: #FFFBD6; color: #333333;">
+                        <table class="container" id="itemPlaceholderContainer" runat="server" border="1" style="background-color: white; height:50px; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px; font-family: Verdana, Arial, Helvetica, sans-serif;">
+                            <tr runat="server" style="background-color: black; color: white; height:50px;">
                                 <th runat="server">Delete</th>
                                 <th runat="server">Edit</th>
                                 <th runat="server">ArtistID</th>
@@ -148,10 +148,10 @@
                     </td>
                 </tr>
                 <tr runat="server">
-                    <td runat="server" style="text-align: center; background-color: #FFCC66; font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333;">
+                    <td runat="server" style="text-align: center; background-color: white; font-family: Verdana, Arial, Helvetica, sans-serif; color: black;">
                         <asp:DataPager ID="DataPager1" runat="server">
                             <Fields>
-                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
+                                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" ButtonCssClass="btn btn-primary" />
                             </Fields>
                         </asp:DataPager>
                     </td>
@@ -162,10 +162,10 @@
         <SelectedItemTemplate>
             <tr style="background-color: #FFCC66; font-weight: bold; color: #000080;">
                 <td>
-                    <asp:Button ID="Button1" runat="server" CommandName="Delete" Text="Delete" />
+                    <asp:Button class="btn btn-danger" ID="Button1" runat="server" CommandName="Delete" Text="Delete" />
                 </td>
                 <td>
-                    <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                    <asp:Button class="btn btn-secondary" ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                 </td>
                 <td>
                     <asp:Label ID="ArtistIDLabel" runat="server" Text='<%# Eval("ArtistID") %>' />

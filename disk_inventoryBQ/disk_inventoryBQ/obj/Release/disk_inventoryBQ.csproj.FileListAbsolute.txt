@@ -200,3 +200,4 @@ C:\Users\mqurbani\Desktop\SWDV-220\swdv-220-wk03\swdv-220-wk03_day05\disk_invent
 C:\Users\mqurbani\Desktop\SWDV-220\swdv-220-wk03\swdv-220-wk03_day05\disk_inventoryBQ\disk_inventoryBQ\obj\Release\disk_inventoryBQ.csproj.CopyComplete
 C:\Users\mqurbani\Desktop\SWDV-220\swdv-220-wk03\swdv-220-wk03_day05\disk_inventoryBQ\disk_inventoryBQ\obj\Release\disk_inventoryBQ.dll
 C:\Users\mqurbani\Desktop\SWDV-220\swdv-220-wk03\swdv-220-wk03_day05\disk_inventoryBQ\disk_inventoryBQ\obj\Release\disk_inventoryBQ.pdb
+C:\Users\mqurbani\Desktop\SWDV-220\swdv-220-wk03\swdv-220-wk03_day05\disk_inventoryBQ\disk_inventoryBQ\obj\Release\disk_inventoryBQ.csprojAssemblyReference.cache

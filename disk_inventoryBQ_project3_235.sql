@@ -688,6 +688,39 @@ to diskUserBQ;
 grant execute on sp_updArtist
 to diskUserBQ;
 
+/*
+		Name				Date				Project
+		Basir Qurbani		12/05/2019			SWDV-235 Project5
+		
+*/
+------------------------Code is used from project 2 starts here ----------------------------------------------
+DROP PROC IF EXISTS sp_ins_checkout;
+GO
+create procedure sp_ins_checkout
+@borrowerID int,
+@diskID int,
+@borrowedDate smalldatetime
+
+as 
+	begin try
+		INSERT INTO [dbo].[Borrower_Disk]
+				   ([DiskID]
+				   ,[BorrowerID]
+				   ,[BorrowDate]
+				   )
+			 VALUES
+				   (@borrowerID,
+				   @diskID,
+				   @borrowedDate
+				   );
+			update CD_DVD
+			set StatusID = '2'
+			where DiskID = @diskID
+	end try
+	begin catch
+		print 'Message: ' + convert(varchar(200), ERROR_MESSAGE())
+	end catch
+go
 
 
 

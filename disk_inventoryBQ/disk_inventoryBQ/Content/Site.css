@@ -26,7 +26,9 @@ input[type="tel"],
 input[type="select"] {
     max-width: 280px;
 }
-
+button{
+    background-color: red;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
