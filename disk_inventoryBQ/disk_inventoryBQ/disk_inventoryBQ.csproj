@@ -168,6 +168,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="errorPage\404Error.aspx" />
     <Content Include="Maintenance\Artist.aspx" />
     <Content Include="Maintenance\Borrower.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -340,6 +341,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="errorPage\404Error.aspx.cs">
+      <DependentUpon>404Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errorPage\404Error.aspx.designer.cs">
+      <DependentUpon>404Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Maintenance\Artist.aspx.cs">
       <DependentUpon>Artist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
